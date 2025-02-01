@@ -129,7 +129,7 @@ Future<Map<String, dynamic>> getLatLng(String filename) async {
 
   if (data.isEmpty) {
     print("No EXIF information found");
-    return {'lat': null, 'lng': null};
+    return {'lat': null, 'lng':null};
   }
 
   final latRef = data['GPS GPSLatitudeRef']?.toString();
@@ -138,6 +138,7 @@ Future<Map<String, dynamic>> getLatLng(String filename) async {
   var lngVal = gpsValuesToFloat(data['GPS GPSLongitude']?.values);
 
   if (latRef == null || latVal == null || lngRef == null || lngVal == null) {
+    print('data $data');
     print("GPS information not found");
     return {'lat': null, 'lng': null};
   }

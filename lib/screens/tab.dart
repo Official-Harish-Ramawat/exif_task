@@ -1,6 +1,7 @@
 import 'package:exif2/screens/gallery.dart';
 import 'package:exif2/screens/map.dart';
 import 'package:flutter/material.dart';
+import 'package:exif2/fetch_images_once.dart' as pkg;
 
 class TabScreen extends StatefulWidget {
   const TabScreen({super.key});
@@ -15,9 +16,9 @@ class _TabScreenState extends State<TabScreen> {
 
   @override
   Widget build(BuildContext context) {
-    Widget content = GalleryScreen();
+    Widget content = const pkg.GalleryScreen();
     if(selectedIndex == 0){
-  content =const GalleryScreen();
+  content =const pkg.GalleryScreen();
 }
 if (selectedIndex==1) {
    content = const MapScreen();
